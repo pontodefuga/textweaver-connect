@@ -10,8 +10,8 @@ import {
   addEdge,
 } from 'reactflow';
 import 'reactflow/dist/style.css';
-import { TextBlock } from './blocks/TextBlock';
-import { InstructionBlock } from './blocks/InstructionBlock';
+import TextBlock from './blocks/TextBlock';
+import InstructionBlock from './blocks/InstructionBlock';
 
 const nodeTypes = {
   textBlock: TextBlock,
