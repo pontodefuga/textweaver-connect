@@ -73,29 +73,27 @@ export function WorkflowBuilder() {
   }, [nodes, edges, toast]);
 
   return (
-    <div className="flex h-full">
+    <div className="flex h-screen w-full">
       <Sidebar 
         onAddTextBlock={addTextBlock}
         onAddInstructionBlock={addInstructionBlock}
         onExecute={executeWorkflow}
       />
-      <div className="flex-1">
-        <div className="h-[calc(100vh-2rem)] rounded-lg border border-slate-200 bg-white">
-          <ReactFlow
-            nodes={nodes}
-            edges={edges}
-            onNodesChange={onNodesChange}
-            onEdgesChange={onEdgesChange}
-            onConnect={onConnect}
-            nodeTypes={nodeTypes}
-            fitView
-            className="bg-slate-50"
-          >
-            <Background />
-            <Controls />
-            <MiniMap />
-          </ReactFlow>
-        </div>
+      <div className="flex-1 w-0 min-h-0">
+        <ReactFlow
+          nodes={nodes}
+          edges={edges}
+          onNodesChange={onNodesChange}
+          onEdgesChange={onEdgesChange}
+          onConnect={onConnect}
+          nodeTypes={nodeTypes}
+          fitView
+          className="bg-slate-50"
+        >
+          <Background />
+          <Controls />
+          <MiniMap />
+        </ReactFlow>
       </div>
     </div>
   );
